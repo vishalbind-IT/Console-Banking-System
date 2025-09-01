@@ -4,30 +4,30 @@ A simple console-based banking system developed using **Python** and **MySQL**, 
 
 ## 🔧 Features
 
-- Create Account with Name and 4-digit PIN
-- Deposit Funds
-- Withdraw Funds (PIN protected)
-- Check Balance (PIN protected)
-- MySQL for persistent storage
+- Create Account with Name and 4-digit PIN  
+- Deposit Funds  
+- Withdraw Funds (PIN protected)  
+- Check Balance (PIN protected)  
+- MySQL for persistent storage  
 
 ## 🛠️ Tech Stack
 
-- Python 3
-- MySQL
-- MySQL Connector (for Python)
+- Python 3  
+- MySQL  
+- MySQL Connector (for Python)  
 
 ## 🔒 Security Features
 
-- PIN-based authentication for withdrawals and balance checks
+- PIN-based authentication for withdrawals and balance checks  
 
 ## 🚀 How to Run
 
-1. Install MySQL Connector for Python:
+1. **Install MySQL Connector for Python**  
 
 ```bash
 pip install mysql-connector-python
 
-2. Setup MySQL and create database & table:
+2. Setup MySQL and create database & table
 
 CREATE DATABASE banking_system;
 
@@ -39,3 +39,4 @@ CREATE TABLE accounts (
     pin INT NOT NULL,
     balance DOUBLE DEFAULT 0
 );
+
