@@ -27,16 +27,4 @@ A simple console-based banking system developed using **Python** and **MySQL**, 
 ```bash
 pip install mysql-connector-python
 
-2. Setup MySQL and create database & table
-
-CREATE DATABASE banking_system;
-
-USE banking_system;
-
-CREATE TABLE accounts (
-    account_number INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    pin INT NOT NULL,
-    balance DOUBLE DEFAULT 0
-);
 
