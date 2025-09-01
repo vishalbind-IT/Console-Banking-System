@@ -26,7 +26,6 @@ A simple console-based banking system developed using **Python** and **MySQL**, 
 
 ```bash
 pip install mysql-connector-python
-```
 
 2. Setup MySQL and create database & table:
 
