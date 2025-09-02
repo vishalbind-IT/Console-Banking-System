@@ -6,7 +6,7 @@ def create_account(db, name, pin):
     sql = "INSERT INTO accounts (name, pin, balance) VALUES (%s, %s, %s)"
     cursor.execute(sql, (name, pin, 0))
     db.commit()
-    print(f"✅ Account created for {name}. Account Number: {cursor.lastrowid}")
+    print(f" Account created for {name}. Account Number: {cursor.lastrowid}")
 
 # Function to deposit money
 def deposit(db, acc_no, amount):
@@ -15,9 +15,9 @@ def deposit(db, acc_no, amount):
     cursor.execute(sql, (amount, acc_no))
     db.commit()
     if cursor.rowcount:
-        print(f"✅ Deposited ₹{amount} to Account No {acc_no}")
+        print(f" Deposited ₹{amount} to Account No {acc_no}")
     else:
-        print("❌ Account not found.")
+        print(" Account not found.")
 
 # Function to withdraw money
 def withdraw(db, acc_no, pin, amount):
@@ -30,11 +30,11 @@ def withdraw(db, acc_no, pin, amount):
             sql = "UPDATE accounts SET balance = balance - %s WHERE account_number = %s"
             cursor.execute(sql, (amount, acc_no))
             db.commit()
-            print(f"✅ Withdrew ₹{amount} from Account No {acc_no}")
+            print(f" Withdrew ₹{amount} from Account No {acc_no}")
         else:
-            print("❌ Insufficient funds.")
+            print(" Insufficient funds.")
     else:
-        print("❌ Invalid account number or PIN.")
+        print(" Invalid account number or PIN.")
 
 # Function to check balance
 def check_balance(db, acc_no, pin):
@@ -44,10 +44,10 @@ def check_balance(db, acc_no, pin):
     result = cursor.fetchone()
     if result:
         name, balance = result
-        print(f"👤 Account Holder: {name}")
-        print(f"💰 Balance: ₹{balance}")
+        print(f" Account Holder: {name}")
+        print(f" Balance: ₹{balance}")
     else:
-        print("❌ Invalid account number or PIN.")
+        print(" Invalid account number or PIN.")
 
 # Main function to run the banking system
 def main():
@@ -92,10 +92,10 @@ def main():
             pin = int(input("Enter your PIN: "))
             check_balance(db, acc_no, pin)
         elif choice == '5':
-            print("👋 Exiting...")
+            print(" Exiting...")
             break
         else:
-            print("❌ Invalid choice. Try again.")
+            print(" Invalid choice. Try again.")
 
     db.close()
 
